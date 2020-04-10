@@ -3,7 +3,7 @@
         <div class="table-cell">{{ item.name }}</div>
         <div class="table-cell">{{ item.stars }}</div>
         <div class="table-cell">{{ item.forks }}</div>
-        <div class="table-cell">{{ lastCommitDate }}</div>
+        <div class="table-cell">{{ date }}</div>
     </div>
 </template>
 
@@ -16,12 +16,12 @@ export default {
     },
     props: ['item'],
     computed: {
-        lastCommitDate() {
-            if(!this.item.commits[0]) {
+        date() {
+            if(!this.item.lastCommitDate) {
                 return;
             }
 
-            return moment(this.item.commits[0].commit.committer.date).format('Do MMMM YYYY');
+            return moment(this.item.lastCommitDate).format('Do MMMM YYYY');
         }
     }
 }

@@ -1,6 +1,7 @@
 <template>
 	<div id="app">
 		<div v-if="!isLoading">
+			<Chart :items="items" />
 			<Table :items="items" />
 		</div>
 	</div>
@@ -10,6 +11,7 @@
 import axios from 'axios';
 
 import Table from './components/Table';
+import Chart from './components/Chart';
 
 export default {
 	name: 'App',
@@ -20,7 +22,8 @@ export default {
 		}
 	},
 	components: {
-		Table
+		Table,
+		Chart
 	},
 	methods: {
 		getData () {
