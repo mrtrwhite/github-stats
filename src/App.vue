@@ -1,28 +1,48 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+	<div id="app">
+		<div v-if="!isLoading">
+			<Table :items="items" />
+		</div>
+	</div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import axios from 'axios';
+
+import Table from './components/Table';
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+	name: 'App',
+	data () {
+		return {
+			items: [],
+			isLoading: false
+		}
+	},
+	components: {
+		Table
+	},
+	methods: {
+		getData () {
+			this.isLoading = true;
+
+			axios.get('http://github-stats-api.test')
+				.then((response) => {
+					if(!response.data) {
+						return;
+					}
+
+					this.items = response.data;
+					this.isLoading = false;
+				})
+				.catch((error) => {
+					console.log(error);
+					this.isLoading = false;
+				});
+		},
+	},
+	created () {
+		this.getData();
+	}
 }
 </script>
-
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
