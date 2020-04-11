@@ -20,8 +20,12 @@ export default {
             data: {
                 datasets: [
                     {
-                        label: false,
-                        data: this.dataPoints
+                        label: 'Latest Commits',
+                        data: this.commits
+                    },
+                    {
+                        label: 'Latest Releases',
+                        data: this.releases
                     }
                 ]
             },
@@ -60,7 +64,7 @@ export default {
         });
     },
     computed: {
-        dataPoints () {
+        commits () {
             return this.items.map((item) => {
                 return {
                     label: item.name,
@@ -68,7 +72,19 @@ export default {
                     y: item.stars
                 }
             });
-        }
+        },
+        releases () {
+            return this.items.filter((item) => {
+                return item.lastRelease;
+            })
+            .map((item) => {
+                return {
+                    label: item.name,
+                    x: item.lastCommitDate,
+                    y: item.stars
+                }
+            });
+        },
     }
 }
 </script>

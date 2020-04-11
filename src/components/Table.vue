@@ -5,6 +5,7 @@
             <div class="table-cell">Stars</div>
             <div class="table-cell">Forks</div>
             <div class="table-cell">Last Commit</div>
+            <div class="table-cell">Last Release</div>
         </div>
         <TableRow v-for="item in items" :item="item" :key="item.name" />
     </div>
