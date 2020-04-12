@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="canvas-wrapper">
         <canvas ref="chartWrapper"></canvas>
     </div>
 </template>
@@ -25,7 +25,8 @@ export default {
                     },
                     {
                         label: 'Latest Releases',
-                        data: this.releases
+                        data: this.releases,
+                        hidden: true
                     }
                 ]
             },
@@ -59,8 +60,20 @@ export default {
                             return data.datasets[tooltipItem.datasetIndex]['data'][tooltipItem.index].label;
                         }
                     }
-                }
-            }  
+                },
+                // plugins: {
+                //     zoom: {
+                //         pan: {
+                //             enabled: true,
+                //             mode: 'y'
+                //         },
+                //         zoom: {
+                //             enabled: true,
+                //             mode: 'y'
+                //         }
+                //     }
+                // }
+            },
         });
     },
     computed: {
@@ -88,3 +101,7 @@ export default {
     }
 }
 </script>
+
+<style lang="scss">
+    // .canvas-wrapper {}
+</style>

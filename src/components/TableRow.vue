@@ -1,10 +1,10 @@
 <template>
     <div class="table-row">
-        <div class="table-cell">{{ item.name }}</div>
-        <div class="table-cell">{{ item.stars }}</div>
-        <div class="table-cell">{{ item.forks }}</div>
-        <div class="table-cell">{{ lastCommit }}</div>
-        <div class="table-cell">{{ lastRelease }}</div>
+        <div class="table-cell name">{{ item.name }}</div>
+        <div class="table-cell stars">{{ item.stars }}</div>
+        <div class="table-cell forks">{{ item.forks }}</div>
+        <div class="table-cell last-commit">{{ lastCommit }}</div>
+        <div class="table-cell last-release">{{ lastRelease }}</div>
     </div>
 </template>
 
