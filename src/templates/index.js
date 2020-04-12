@@ -48,7 +48,9 @@ const Page = ({ pageContext }) => {
 
                             return (
                                 <div className="table-row" key={key}>
-                                    <div className="table-cell name">{item.name}</div>
+                                    <div className="table-cell name">
+                                        <a href={`https://github.com/${item.name}`} target="_blank" className="link">{item.name}</a>
+                                    </div>
                                     <div className="table-cell stars">{item.stars}</div>
                                     <div className="table-cell forks">{item.forks}</div>
                                     <div className="table-cell last-commit">{ lastCommit() }</div>

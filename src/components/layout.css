@@ -33,6 +33,10 @@ body * {
   font-size: 1.8rem;
 }
 
+.link {
+  text-decoration: none;
+}
+
 .intro {
   max-width: 800px;
   margin: 40px auto 60px auto;
