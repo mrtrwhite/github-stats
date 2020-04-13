@@ -61,13 +61,13 @@ const Page = ({ pageContext }) => {
                     }
                 </div>
             </div>
-            <script
+            {/* <script
                 dangerouslySetInnerHTML={{
                     __html: `
                         window.apiData = ${JSON.stringify(pageContext.data)};
                     `
                 }}
-            />
+            /> */}
         </Layout>
     )
 }

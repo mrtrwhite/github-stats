@@ -11,6 +11,7 @@ import React from 'react'
 export const onRenderBody = ({ setPostBodyComponents }) => {
     setPostBodyComponents([
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js" />,
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js" />,
         <script src="./chart.js" />
     ])
 }
