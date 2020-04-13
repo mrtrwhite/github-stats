@@ -7,7 +7,7 @@
 const axios = require('axios')
 
 const getApiData = async () => {
-	const { data } = await axios.get('http://github-stats-api.test')
+	const { data } = await axios.get('https://api.githubstats.live')
 	return { ...data }
 }
 
