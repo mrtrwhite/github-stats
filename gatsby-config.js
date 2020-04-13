@@ -5,7 +5,7 @@ module.exports = {
     author: `@mrtrwhite`,
   },
   plugins: [
-    `gatsby-plugin-react-helmet`
-  ],
-  pathPrefix: '/github-stats'
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-remove-serviceworker`
+  ]
 }
